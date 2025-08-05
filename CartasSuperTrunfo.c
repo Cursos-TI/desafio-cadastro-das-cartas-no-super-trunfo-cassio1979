@@ -9,7 +9,7 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     char cidade, estado;
-    int codigo, PIB, pontos;
+    int codigo[2], PIB, pontos;
     float area, populacao;
 
     // Cadastro das Cartas:
