@@ -10,7 +10,7 @@ int main() {
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     char cidade[50], estado[50], cidade2[50], estado2[50];
     int codigo, codigo2, populacao, populacao2, pontos, pontos2;
-    float area, area2, PIB, PIB2;
+    float area, area2, PIB, PIB2, PIB_per_capita, PIB_per_capita2, densidade, densidade2;
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -46,11 +46,17 @@ int main() {
     printf("Digite o numero de pontos turísticos 2: \n");
     scanf("%d", &pontos2);
 
+    //Cálculo do PIB per capita e da densidade
+    PIB_per_capita = PIB/populacao;
+    densidade = populacao/area;
+    PIB_per_capita2 = PIB2/populacao2;
+    densidade2 = populacao2/area2;
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-    printf("Carta_1\nCódigo do Estado: %s\nCódigo da carta: %d\nCidade: %s\nPopulação: %d milhões de habitantes\nÁrea: %.2f km2\nPIB: %.2f milhões de reais\nPontos Turísticos: %d\n\n", estado, codigo, cidade, populacao, area, PIB, pontos);
-    printf("Carta_2\nCódigo do Estado: %s\nCódigo da carta: %d\nCidade: %s\nPopulação: %d milhões de habitantes\nÁrea: %.2f km2\nPIB: %.2f milhões de reais\nPontos Turísticos: %d\n", estado2, codigo2, cidade2, populacao2, area2, PIB2, pontos2);
+    printf("Carta_1\nCódigo do Estado: %s\nCódigo da carta: %d\nCidade: %s\nPopulação: %d milhões de habitantes\nÁrea: %.2f km2\nPIB: %.2f milhões de reais\nPontos Turísticos: %d\nPIB per capita: %.2f\nDensidade: %.2f\n\n", estado, codigo, cidade, populacao, area, PIB, pontos, PIB_per_capita, densidade);
+    printf("Carta_2\nCódigo do Estado: %s\nCódigo da carta: %d\nCidade: %s\nPopulação: %d milhões de habitantes\nÁrea: %.2f km2\nPIB: %.2f milhões de reais\nPontos Turísticos: %d\nPIB per capita: %.2f\nDensidade: %.2f\n\n", estado2, codigo2, cidade2, populacao2, area2, PIB2, pontos2, PIB_per_capita2, densidade2);
 
     return 0;
 }
