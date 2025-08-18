@@ -1,9 +1,10 @@
 #include<stdio.h>
 int main() {
     char cidade1[50], cidade2[50], estado1[50], estado2[50], codigo1[10], codigo2[10];
-    int pontos1, pontos2;
+    int pontos1, pontos2, resultado_pop, resultado_area, resultado_pib, resultado_pontos, resultado_ppc, resultado_densidade, resultado_super; 
     float area1, area2, pib1, pib2, pib_per_capita1, pib_per_capita2, densidade1, densidade2;
     unsigned long int populacao1, populacao2;
+
     printf("Digite o codigo do estado de Carta 1 de A a H: \n");
     scanf("%s", estado1);
     printf("Digite o codigo da carta: \n");
@@ -46,15 +47,23 @@ int main() {
     
     unsigned long int super_poder1 = populacao1 + area1 + pib1 + pontos1 + pib_per_capita1 - densidade1;
     unsigned long int super_poder2 = populacao2 + area2 + pib2 + pontos2 + pib_per_capita2 - densidade2;
+    int resultado_populacao = populacao1>populacao2;
+    int resultado_area = area1>area2;
+    int resultado_pib = pib1>pib2;
+    int resultado_pontos = pontos1>pontos2;
+    int resultado_ppc = pib_per_capita1>pib_per_capita2;
+    int resultado_densidade = densidade1>densidade2;
+    int resultado_super = super_poder1>super_poder2;
+
 
     printf("Comparacao de cartas\n\n");
-    printf("População: Carta 1 venceu?: %lu\n", populacao1>populacao2);
-    printf("Area: Carta 1 venceu?: %f\n", area1>area2);
-    printf("PIB: Carta 1 venceu?: %f\n", pib1>pib2);
-    printf("Pontos turisticos: Carta 1 venceu?: %f\n", pontos1>pontos2);
-    printf("PIB per capita: Carta 1 venceu?: %f\n", pib_per_capita1>pib_per_capita2);
-    printf("Densidade: Carta 1 venceu?: %f", densidade1<densidade2);
-    printf("Super Poder: Carta 1 venceu? %lu\n", super_poder1>super_poder2);
+    printf("População: Carta 1 venceu?: %d\n", resultado_populacao);
+    printf("Area: Carta 1 venceu?: %d\n", resultado_area);
+    printf("PIB: Carta 1 venceu?: %d\n", resultado_pib);
+    printf("Pontos turisticos: Carta 1 venceu?: %d\n", resultado_pontos);
+    printf("PIB per capita: Carta 1 venceu?: %d\n", resultado_ppc);
+    printf("Densidade: Carta 1 venceu?: %d", resultado_densidade);
+    printf("Super Poder: Carta 1 venceu? %d\n", resultado_super);
     
     return 0;
 }
