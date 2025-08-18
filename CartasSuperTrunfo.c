@@ -57,5 +57,4 @@ int main() {
     printf("Super Poder: Carta 1 venceu? %lu\n", super_poder1>super_poder2);
     
     return 0;
-    return 0;
 }
