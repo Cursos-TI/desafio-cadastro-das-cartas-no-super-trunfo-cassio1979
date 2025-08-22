@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 int main() {
     char cidade1[50], cidade2[50], estado1[50], estado2[50], codigo1[10], codigo2[10];
     int pontos1, pontos2; 
@@ -56,7 +56,18 @@ int main() {
     printf("Pontos turisticos: Carta 1 venceu?: %d\n", (pontos1 > pontos2));
     printf("PIB per capita: Carta 1 venceu?: %d\n", (pib_per_capita1 > pib_per_capita2));
     printf("Densidade: Carta 1 venceu?: %d\n", (densidade1 > densidade2));
-    printf("Super Poder: Carta 1 venceu? %d\n", (super_poder1 > super_poder2));
+    printf("Super Poder: Carta 1 venceu? %d\n\n", (super_poder1 > super_poder2));
+
+    //Comparar as cartas
+    printf("\n\nVamos comparar o requisito PIB entre as duas cartas\n\n");
+    fflush(stdout);
+    printf("PIB da Carta 1: %.2f bilhoes de reais\nPIB da Carta 2: %.2f bilhoes de reais\n", pib1,pib2);
+
+    if (pib1 > pib2) {
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
     
     return 0;
 }
